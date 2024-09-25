@@ -22,7 +22,7 @@ node_t *node_get_random(int amount)
     node_t *x = node_new(1);
     node_t *head = x;
 
-    for (int i = 2; i <= amount + 1; i++)
+    for (int i = 2; i <= amount; i++)
     {
         x->next = node_new(i);
         x = x->next;
@@ -34,7 +34,7 @@ void node_print_from_head(node_t *head)
 {
     node_t *x = head;
 
-    while (x->next != NULL)
+    while (x != NULL)
     {
         printf("[%p; %d] ", x, x->value);
         x = x->next;
